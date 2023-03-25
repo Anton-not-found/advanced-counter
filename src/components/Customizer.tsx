@@ -11,12 +11,11 @@ type CustomizerPropsType = {
     callbackSet: () => void
     incorrectValue: boolean
     focus: () => void
-    // focusValue: boolean
+    focusValue: boolean
+
 }
 export const Customizer = (props: CustomizerPropsType) => {
-
-    // console.log(props.focusValue)
-    let disableSetButton = props.startValue >= props.maxValue
+      let disableSetButton = !props.focusValue || !props.incorrectValue
 
     return (
         <div className={s.customizer}>

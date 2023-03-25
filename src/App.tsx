@@ -35,26 +35,19 @@ function App() {
         localStorage.setItem('max-value-key', JSON.stringify(maxValue))
         setTabloValue(startValue)
         setSettingMaxValue(maxValue)
-        console.log('set push')
         setFocusValue(false)
     }
-
     const incrementValue = () => {
         setTabloValue(tabloValue + 1)
     }
-
     const resetValue = () => {
         setTabloValue(startValue)
     }
-
-
-
     const focusOccurred = () => {
         setFocusValue(true)
 
     }
 
-    console.log(focusValue)
     return (
         <div className="App">
             <Customizer callbackStartValue={setStartValue}
@@ -64,6 +57,7 @@ function App() {
                         maxValue={maxValue}
                         incorrectValue={incorrectValue}
                         focus={focusOccurred}
+                        focusValue={focusValue}
 
             />
             <Counter tabloValue={tabloValue}
