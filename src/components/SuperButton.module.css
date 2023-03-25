@@ -1,0 +1,23 @@
+.superButton {
+    display: flex;
+    justify-content: center;
+
+    box-shadow: 5px 5px 8px #032d62;
+}
+
+.superButton button {
+    color: white;
+    border-radius: 3px;
+    background-color: #076d7c;
+    border-color: #014048
+}
+
+.superButton button:hover {
+    background-color: rgba(7, 109, 124, 0.75);
+}
+
+.superButton button:disabled {
+    background-color: rgba(7, 109, 124, 0.36);
+    border-color: rgba(7, 109, 124, 0.36);
+    color: rgba(255, 255, 255, 0.49);
+}

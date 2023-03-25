@@ -14,13 +14,14 @@
 .tablo {
     display: flex;
     justify-content: center;
+    align-items:center;
     border: 2px solid #032d62;
     width: 170px;
     height: 80px;
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 8px #032d62;
-    font-size: 40px;
+    font-size: 25px;
     color: white;
 }
 
@@ -35,7 +36,31 @@
     margin-top: 15px;
     border-radius: 10px;
     box-shadow: 5px 5px 8px #032d62;
-    font-size: 40px;
+    font-size: 25px;
     color: red;
+    align-items:center;
+}
 
+.settingTablo{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border: 2px solid #032d62;
+    width: 170px;
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    font-size: 13px;
+    color: white;
+}
+
+.button {
+    display: flex;
+    border: 2px solid #032d62;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px #032d62;
+    align-items: center;
 }

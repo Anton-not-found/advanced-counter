@@ -10,8 +10,8 @@ function App() {
     const [maxValue, setMaxValue] = useState(1)
     const [tabloValue, setTabloValue] = useState(0)
     const [settingMaxValue, setSettingMaxValue] = useState(1)
+    const [focusValue, setFocusValue] = useState(false)
     let incorrectValue = startValue < maxValue // true
-
 
     useEffect(() => {
         let startValueAsString = localStorage.getItem('start-value-key')
@@ -30,21 +30,15 @@ function App() {
             setSettingMaxValue(newMaxValue)
         }
     }, [])
-
-    // console.log(startValue)
-    // console.log(maxValue)
     const settingStartValue = () => {
         localStorage.setItem('start-value-key', JSON.stringify(startValue))
         localStorage.setItem('max-value-key', JSON.stringify(maxValue))
-        console.log(startValue)   //
-        console.log(maxValue)    //add to Local Storage
         setTabloValue(startValue)
         setSettingMaxValue(maxValue)
+        console.log('set push')
+        setFocusValue(false)
     }
 
-
-    // console.log(tabloValue)             //  в Local Storage как startValue
-    // console.log(settingMaxValue)       //  в Local Storage как MaxValue
     const incrementValue = () => {
         setTabloValue(tabloValue + 1)
     }
@@ -53,6 +47,14 @@ function App() {
         setTabloValue(startValue)
     }
 
+
+
+    const focusOccurred = () => {
+        setFocusValue(true)
+
+    }
+
+    console.log(focusValue)
     return (
         <div className="App">
             <Customizer callbackStartValue={setStartValue}
@@ -61,7 +63,7 @@ function App() {
                         startValue={startValue} // передаём inputValue в SuperInput для синхронизации инпута value*
                         maxValue={maxValue}
                         incorrectValue={incorrectValue}
-
+                        focus={focusOccurred}
 
             />
             <Counter tabloValue={tabloValue}
@@ -69,6 +71,8 @@ function App() {
                      callback={incrementValue}
                      callbackRes={resetValue}
                      incorrectValue={incorrectValue}
+                     focus={focusOccurred}
+                     focusValue={focusValue}
             />
         </div>
     );

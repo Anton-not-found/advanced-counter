@@ -1,10 +1,12 @@
 import React, {ChangeEvent} from 'react';
 import s from './SuperInput.module.css';
 
+
 type SuperInputPropstype = {
     title: string
     callback: (e: number) => void
     value: number
+    focus: () => void
 }
 export const SuperInput = (props: SuperInputPropstype) => {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -12,7 +14,7 @@ export const SuperInput = (props: SuperInputPropstype) => {
         props.callback(value)
     }
     const onfocusHandler = () => {
-        console.log('onFocus')
+        props.focus()
     }
 
     return (
