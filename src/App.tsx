@@ -11,7 +11,7 @@ function App() {
     const [tabloValue, setTabloValue] = useState(0)
     const [settingMaxValue, setSettingMaxValue] = useState(1)
     const [focusValue, setFocusValue] = useState(false)
-    let incorrectValue = startValue < maxValue // true
+    let incorrectValue = startValue < maxValue && startValue >= 0 && maxValue > 0 // true
 
     useEffect(() => {
         let startValueAsString = localStorage.getItem('start-value-key')
